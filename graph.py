@@ -9,14 +9,14 @@ ax1 = fig.add_subplot(1,1,1) #creates axis and allows multiple subplots in a sin
 def animate(i):
     data = open("data2.txt","r").read() #opens file
     items = data.split('\n') #split by new line
-    xar = [] #x array?
+    xar = [] 
     yar = []
     for eachLine in items: #checks each line
         if len(eachLine)>1: #doesn't check blank lines
             x,y = eachLine.split(',') #split by comma
             xar.append(pd.to_datetime(x, dayfirst=True)) #adds x to list and changes to datetime
             yar.append(int(y)) #adds all y values to a list
-    ax1.clear() #resets plots ?
+    ax1.clear() 
     ax1.plot(xar,yar) #plots the lists
     plt.xlabel("Time") #labels
     plt.ylabel("Temp")
